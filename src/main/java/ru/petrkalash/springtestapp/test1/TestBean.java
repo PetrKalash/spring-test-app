@@ -1,17 +1,21 @@
-package ru.petrkalash.springtestapp;
+package ru.petrkalash.springtestapp.test1;
 
 public class TestBean {
     private String name;
+
+    public TestBean() {
+        this("Unknown");
+    }
 
     public TestBean(String name) {
         this.name = name;
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public final void setName(String name) {
         this.name = name;
     }
 }
