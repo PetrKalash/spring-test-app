@@ -1,12 +1,12 @@
 package ru.petrkalash.springtestapp.test2;
 
 public class MusicPlayer {
-    private Music music;
+    private final Music music;
     // IoC
     public MusicPlayer(Music music) {
         this.music = music;
     }
-    public void playMusic(Music music) {
+    public void playMusic() {
         System.out.println("Play " + music.getSong());
     }
 }

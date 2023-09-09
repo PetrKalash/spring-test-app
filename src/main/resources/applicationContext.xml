@@ -12,5 +12,15 @@
     </bean>
     <bean id="anonymousBean" class="ru.petrkalash.springtestapp.test1.TestBean"/>
 
+    <!-- Внедряем необходимую нам песню -->
     <bean id="musicBean" class="ru.petrkalash.springtestapp.test2.ClassicalMusic"/>
+    <!-- Создаем объект musicPlayer -->
+    <bean id="musicPlayer" class="ru.petrkalash.springtestapp.test2.MusicPlayer">
+        <constructor-arg ref="musicBean"/>
+    </bean>
+
+    <bean id="animalBean" class="ru.petrkalash.springtestapp.test3.Cat"/>
+    <bean id="animalSound" class="ru.petrkalash.springtestapp.test3.AnimalSound">
+        <constructor-arg ref="animalBean"/>
+    </bean>
 </beans>

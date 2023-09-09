@@ -1,8 +1,8 @@
 package ru.petrkalash.springtestapp.test2;
 
-public class ClassicalMusic implements Music {
+public class JazzMusic implements Music {
     @Override
     public String getSong() {
-        return "Ludwig van Beethoven";
+        return "Jazz";
     }
 }
