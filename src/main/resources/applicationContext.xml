@@ -7,6 +7,8 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
     <bean id="testBean" class="ru.petrkalash.springtestapp.test1.TestBean">
         <constructor-arg value="Petr"/>       <!-- Передаем параметр в качестве аргумента -->
     </bean>
@@ -22,5 +24,17 @@
     <bean id="animalBean" class="ru.petrkalash.springtestapp.test3.Cat"/>
     <bean id="animalSound" class="ru.petrkalash.springtestapp.test3.AnimalSound">
         <constructor-arg ref="animalBean"/>
+    </bean>
+
+    <bean id="musicBeanSetter" class="ru.petrkalash.springtestapp.test4.ClassicalMusic"/>
+    <bean id="musicPlayerSetter" class="ru.petrkalash.springtestapp.test4.MusicPlayer">
+        <property name="music" ref="musicBeanSetter"/>
+        <property name="name" value="SuperStar"/>
+        <property name="volume" value="50"/>
+    </bean>
+    <bean id="musicPlayerFile" class="ru.petrkalash.springtestapp.test4.MusicPlayer">
+        <property name="music" ref="musicBeanSetter"/>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 </beans>
